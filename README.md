@@ -9,8 +9,6 @@ help: ## show this help
 	@sed -ne "/@sed/!s/\(^[^#?=]*:\).*##\(.*\)/`tput setaf 2``tput bold`\1`tput sgr0`\2/p" $(MAKEFILE_LIST)
 	@printf "────────────────────────`tput bold``tput setaf 4` Make Variables `tput sgr0`───────────────────────────────\n"
 	@sed -ne "/@sed/!s/\(.*\)?=\(.*\)##\(.*\)/`tput setaf 4``tput bold`\1:`tput setaf 5`\2`tput sgr0`\3/p" $(MAKEFILE_LIST)
-	@printf "────────────────────────`tput bold``tput setaf 3` Nextflow Arguments `tput sgr0`───────────────────────────\n"
-	@sed -ne "/@sed/!s/params.\([a-zA-Z]*\) *= *\(.*\)\/\/\(.*\)/`tput setaf 3``tput bold`--\1:`tput setaf 5` \2`tput sgr0`\3/p" nextflow.config
 	@printf "───────────────────────────────────────────────────────────────────────\n"
 
 # remove if you want another default.
